@@ -8,14 +8,15 @@ int Sum(int m, int n) // function declaration
     return s;
 }
 
-int mul(int s, int t)
+void mul(int s, int t)
 {
     int p = s * t;
-    return p;
+    cout << "The mul is: " << p << endl;
 }
 
-void fun(){
-    cout<<"This is a void function"<<endl;
+void fun()
+{
+    cout << "This is a void function" << endl;
 }
 
 int main()
@@ -27,7 +28,7 @@ int main()
     // function call
     cout << "The sum is: " << Sum(a, b);
     cout << endl;
-    cout << "The mul is: " << mul(a, b);
+
     cout << endl;
     fun();
 }
