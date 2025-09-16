@@ -31,7 +31,7 @@ int Fact(int n)
 int main()
 {
     int a, b;
-    cout << "Enter num";
+    cout << "Enter num : ";
     cin >> a >> b;
 
     cout << Prime(a) << endl; // A is prime or not
