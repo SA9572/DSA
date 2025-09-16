@@ -1,17 +1,17 @@
 #include <iostream>
 using namespace std;
 
-int Sum(int m, int n) // function declaration
+void Sum(int m, int n) // function declaration
 {
 
     int s = m + n; // function define
-    return s;
+    cout << "The sum is: " << s;
 }
 
-void mul(int s, int t)
+int mul(int s, int t)
 {
     int p = s * t;
-    cout << "The mul is: " << p << endl;
+    return p;
 }
 
 void fun()
@@ -26,9 +26,9 @@ int main()
     cin >> a >> b;
 
     // function call
-    cout << "The sum is: " << Sum(a, b);
+    Sum(a, b);
     cout << endl;
-
+    cout << "The mul is: " << mul(a, b);
     cout << endl;
     fun();
 }

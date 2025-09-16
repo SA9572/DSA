@@ -22,7 +22,7 @@ void bubbleSort(std::vector<int> &arr)
 
 int main()
 {
-    std::vector<int> arr = {64, 34, 12, 22, 11, 90};
+    std::vector<int> arr = {64, 34, 25, 12, 22, 11, 90};
     bubbleSort(arr);
 
     std::cout << "Sorted array: ";
