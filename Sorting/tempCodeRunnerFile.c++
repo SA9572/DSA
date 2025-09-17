@@ -1,35 +1,59 @@
-#include <iostream>
-#include <vector>
+// #include <iostream>
+// using namespace std;
 
-void bubbleSort(std::vector<int> &arr)
-{
-    int n = arr.size();
-    for (int i = 0; i < n - 1; ++i)
-    {
-        bool swapped = false;
-        for (int j = 0; j < n - i - 1; ++j)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                std::swap(arr[j], arr[j + 1]);
-                swapped = true;
-            }
-        }
-        if (!swapped)
-            break;
-    }
-}
+// int main()
+// {
+//     int arr[6] = {10, 4, 1, 3, 2, 7};
+//     for (int i = 0; i < 5; i++)
+//     {
+//         int index = i;
+//         for (int j = i + 1; j < 6; j++)
+//         {
+//             if (arr[j] < arr[index])
+//             {
+//                 index = j;
+//             }
+//         }
+//         swap(arr[i], arr[index]);
+//     }
+//     for (int i = 0; i < 6; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+//     return 0;
+// }
+
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    std::vector<int> arr = {64, 34, 25, 12, 22, 11, 90};
-    bubbleSort(arr);
+    int arr[1000];
+    int n;
+    cout << "Enter the size of array: ";
+    cin >> n; // size of elements;
 
-    std::cout << "Sorted array: ";
-    for (int num : arr)
+    cout << "Enter the elements of array: ";
+    for (int i = 0; i < n; i++)
     {
-        std::cout << num << " ";
+        cin >> arr[i];
     }
-    std::cout << std::endl;
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        int index = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[j] < arr[index])
+            {
+                index = j;
+            }
+        }
+        swap(arr[i], arr[index]);
+    }
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
     return 0;
 }
