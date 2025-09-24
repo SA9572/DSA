@@ -3,38 +3,33 @@ using namespace std;
 
 int main()
 {
-    int arr[10000];
+
+    int aarr[10000];
+    cout << "Enter the size of array: ";
     int n;
-    cout << " enter the size of elements in array: ";
     cin >> n;
-    cout << " enter the elements of array: ";
+
+    cout << "Enter the elements of array: ";
+
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> aarr[i];
     }
 
-    for (int i = n - 2; i >= 0; i--)
-    { // outer loop
-
-        bool swapped = 0;
-        for (int j = 0; j <= i; j++) // inner loop
+    for (int j = n - 1; j > 0; j--)
+    {
+        if (aarr[j] < aarr[j - 1])
         {
-
-            if (arr[j] > arr[j + 1])
-            {
-                swapped = 1;
-                swap(arr[j], arr[j + 1]);
-            }
+            swap(aarr[j], aarr[j - 1]);
         }
-
-        if (swapped == 0)
-        { // when swapped is false
+        else
+        {
             break;
         }
     }
 
     for (int i = 0; i < n; i++)
     {
-        cout << arr[i] << " ";
+        cout << aarr[i] << " ";
     }
 }
