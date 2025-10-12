@@ -67,7 +67,7 @@ int main()
     return 0;
 }
 
-///<<<<----- selction sort by taking user input --->>>>>
+///<<<<----- selection sort by taking user input --->>>>>
 #include <iostream>
 using namespace std;
 

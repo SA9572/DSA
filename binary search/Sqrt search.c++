@@ -7,17 +7,22 @@ public:
     int mySqrt(int x)
     {
 
+        if (x < 2)
+        {
+            return x;
+        }
+
         int start = 0, end = x, ans, mid;
         while (start <= end)
         {
             mid = start + (end - start) / 2;
 
-            if (mid * mid == x)
+            if (mid * mid == x) // if(mid == x/mid)
             {
                 ans = mid;
                 break;
             }
-            else if (mid * mid < x)
+            else if (mid * mid < x) // elseif(mid < x/mid)
             {
                 ans = mid;       // possible answer
                 start = mid + 1; // move right
