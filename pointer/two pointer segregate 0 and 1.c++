@@ -1,68 +1,55 @@
-// two pointer approach to segregate 0s and 1s in an array
-#include <iostream>
-#include <vector>
-#include <algorithm>
+// Simple, complete program to segregate 0s and 1s using the two-pointer technique.
+// Input format:
+// First line: n (number of elements)
+// Second line: n integers (each should be 0 or 1)
+// Output: the array after segregation (all 0s first, then 1s), space-separated
 
-class Solution
+#include <bits/stdc++.h>
+using namespace std;
+
+// Move all 0s to the left and 1s to the right in O(n) time and O(1) extra space.
+void segregate0and1(vector<int> &a)
 {
-public:
-    // Reorders the array in-place so that all 0s come before all 1s.
-    // Works in O(n) time and O(1) extra space.
-    void segregate0and1(int arr[], int n)
+    int i = 0, j = (int)a.size() - 1;
+    while (i < j)
     {
-        int start = 0, end = n - 1;
-        while (start < end)
+        if (a[i] == 0)
         {
-            if (arr[start] == 0)
-            {
-                ++start;
-            }
-            else
-            {
-                if (arr[end] == 0)
-                {
-                    std::swap(arr[start], arr[end]);
-                    ++start;
-                    --end;
-                }
-                else
-                {
-                    --end;
-                }
-            }
+            ++i;
+            continue;
         }
+        if (a[j] == 1)
+        {
+            --j;
+            continue;
+        }
+        // a[i] == 1 and a[j] == 0
+        swap(a[i], a[j]);
+        ++i;
+        --j;
     }
-};
+}
 
 int main()
 {
-    // Input format:
-    // First line: n (number of elements)
-    // Second line: n integers (each either 0 or 1)
-    // Example:
-    // 7
-    // 0 1 0 1 1 0 0
-
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     int n;
-    if (!(std::cin >> n))
-        return 0;
-    std::vector<int> a(n);
+    if (!(cin >> n))
+        return 0; // no input
+    vector<int> a(n);
     for (int i = 0; i < n; ++i)
-        std::cin >> a[i];
+        cin >> a[i];
 
-    Solution sol;
-    sol.segregate0and1(a.data(), n);
+    segregate0and1(a);
 
     for (int i = 0; i < n; ++i)
     {
         if (i)
-            std::cout << ' ';
-        std::cout << a[i];
+            cout << ' ';
+        cout << a[i];
     }
-    std::cout << '\n';
-
+    cout << '\n';
     return 0;
 }
