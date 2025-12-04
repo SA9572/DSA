@@ -24,7 +24,7 @@ int main()
         {
             if (arr[i][j] == x)
             {
-                cout << "yes";
+                cout << "yes"; 
                 return 0;
             }
         }
