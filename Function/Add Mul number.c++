@@ -14,8 +14,9 @@ int mul(int s, int t)
     return p;
 }
 
-void fun(){
-    cout<<"This is a void function"<<endl;
+void fun()
+{
+    cout << "This is a void function" << endl;
 }
 
 int main()

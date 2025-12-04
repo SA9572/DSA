@@ -48,11 +48,12 @@ int main()
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    cout << "Enter the size of the array followed by the elements:\n";
+
     int n;
     if (!(cin >> n))
         return 0;
 
+    cout << "Enter " << n << " elements:\n";
     vector<int> arr(n);
     for (int i = 0; i < n; ++i)
         cin >> arr[i];

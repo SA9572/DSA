@@ -16,4 +16,7 @@ int main()
         }
         cout << endl;
     }
+
+    cout << "Rows =: " << matrix.size() << endl;
+    cout << "Columns =: " << matrix[0].size() << endl;
 }
