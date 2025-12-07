@@ -104,6 +104,4 @@ int main()
         cout << "Element FOUND!\n";
     else
         cout << "Element NOT found!\n";
-
-    return 0;
 }
